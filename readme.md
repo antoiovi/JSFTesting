@@ -21,13 +21,16 @@ Jetty maven plugin
 
   mvn jetty:run
 
-    go to http:// localhost:8888/abc/antoioviDB
+go to http:// localhost:8888/abc/antoioviDB
 
 Tomcat
+
   mvn clean package -P servletContainer
-  go to http:// localhost:8080/abc/antoioviDB
 
-  Wildfly / TomEE
+go to http:// localhost:8080/abc/antoioviDB
 
-  mvn clean package
-  go to http:// localhost:8080/abc/antoioviDB
+Wildfly / TomEE
+
+    mvn clean package
+
+go to http:// localhost:8080/abc/antoioviDB
