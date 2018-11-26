@@ -1,8 +1,9 @@
-Program to verify funzionality of javax.validation api
+# Program to verify funzionality of javax.validation api
 
 The program is composed of a bean (Person.java) , a class tha simulate a database,
 which instead of connecting to a Database , implements a List of Persons with an
 ArrayList (PersonDao.java) and a backing bean to link data to jsf pages (Personbean.java)
+
 The  program can be used to test JSF functionalities without the need to
 configure database connections.
 
@@ -12,24 +13,26 @@ and one with a form to input new entities (Persons).
 The properties of the  Person bean class are annotated with javax.validaton Annotations.
 
 Running with Wildfly  the validation process works properly;
+
 Running with TomEE the validation process works,  excpet for @Email annotation.
+
 Running with Tomcat and Jetty the annotations (@Size,@Email , etc) does not have any effect.
 
-Compiling and Running
+# Compiling and Running
 
-Jetty maven plugin
+## Jetty maven plugin
 
   mvn jetty:run
 
 go to http:// localhost:8888/abc/antoioviDB
 
-Tomcat
+## Tomcat
 
   mvn clean package -P servletContainer
 
 go to http:// localhost:8080/abc/antoioviDB
 
-Wildfly / TomEE
+## Wildfly / TomEE
 
     mvn clean package
 
