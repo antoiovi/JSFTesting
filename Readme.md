@@ -1,7 +1,7 @@
 Program to verify funzionality of JSF features an web applicaztion testings.
 
 
-Switch to brunchs :
+Switch to branch :
 
 
 test-validation-beans  : simple app with an input form and bean with validations
