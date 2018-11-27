@@ -12,11 +12,37 @@ and one with a form to input new entities (Persons).
 
 The properties of the  Person bean class are annotated with javax.validaton Annotations.
 
-Running with Wildfly  the validation process works properly;
+## Problems
+At the beginning the program gave these problems :
 
-Running with TomEE the validation process works,  excpet for @Email annotation.
+* Running with Wildfly  the validation process works properly;
+* Running with TomEE the validation process works,  excpet for @Email annotation.
+* Running with Tomcat and Jetty the annotations (@Size,@Email , etc) does not have any effect.
 
-Running with Tomcat and Jetty the annotations (@Size,@Email , etc) does not have any effect.
+
+## Soulution of problems
+The problems were solved adding the dependencies
+
+```XML
+<dependency>
+  <groupId>org.hibernate.validator</groupId>
+  <artifactId>hibernate-validator</artifactId>
+  <version>6.0.13.Final</version>
+</dependency>
+<!--Mandatory for not JavaEE servers like Tomcat or Jetty   -->
+<dependency>
+    <groupId>javax.el</groupId>
+    <artifactId>javax.el-api</artifactId>
+    <version>3.0.0</version>
+</dependency>
+<dependency>
+  <groupId>org.glassfish.web</groupId>
+    <artifactId>javax.el</artifactId>
+    <version>2.2.6</version>
+  </dependency>
+
+```
+
 
 # Compiling and Running
 
@@ -30,10 +56,10 @@ go to http:// localhost:8888/abc/antoioviDB
 
   mvn clean package -P servletContainer
 
-go to http:// localhost:8080/abc/antoioviDB
+go to http:// localhost:8080/antoioviDB
 
 ## Wildfly / TomEE
 
     mvn clean package
 
-go to http:// localhost:8080/abc/antoioviDB
+go to http:// localhost:8080/antoioviDB
