@@ -50,16 +50,16 @@ The problems were solved adding the dependencies
 
   mvn jetty:run
 
-go to http:// localhost:8888/abc/antoioviDB
+go to http:// localhost:8080
 
 ## Tomcat
 
   mvn clean package -P servletContainer
 
-go to http:// localhost:8080/antoioviDB
+go to http:// localhost:8080/Persons
 
 ## Wildfly / TomEE
 
     mvn clean package
 
-go to http:// localhost:8080/antoioviDB
+go to http:// localhost:8080/Persons
